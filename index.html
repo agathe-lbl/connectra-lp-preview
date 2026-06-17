@@ -15,7 +15,7 @@
   --ink:#0c0e13;
   --ink-soft:#5b6573;
   /* Cool luxury palette (Agathe direction, Jun 17): white / cool-grey / near-black + blue.
-     Departs from page-visuals.md warm-neutral spec — prototype for Georgi/Marina to bless. */
+     Departs from page-visuals.md warm-neutral spec, prototype for Georgi/Marina to bless. */
   --coral:#3b53ff;
   --coral-deep:#2031c7;
   --teal:#6b7686;
@@ -188,6 +188,141 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:
   .nav-links a:not(.btn){display:none}
   .portrait{max-width:340px}
 }
+
+/* ---------- hero device (mix: Version C product proof) ---------- */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:4rem;align-items:center}
+.hero-visual{position:relative}
+.device{
+  position:relative;width:min(290px,82%);margin:0 auto;aspect-ratio:9/18.6;border-radius:34px;
+  background:linear-gradient(165deg,#10131c,#1b2240);border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 44px 90px -42px rgba(59,83,255,.55),0 8px 30px -14px rgba(12,14,19,.5);
+  padding:1.6rem 1.2rem 1.4rem;color:#eef1fb;overflow:hidden;
+}
+.device::before{content:"";position:absolute;top:.72rem;left:50%;transform:translateX(-50%);width:32%;height:5px;border-radius:99px;background:rgba(255,255,255,.18)}
+.d-status{margin-top:1.5rem;display:flex;align-items:center;gap:.6rem;font-weight:600;font-size:.95rem}
+.d-status small{display:block;color:#9aa7c8;font-weight:400;font-size:.76rem;margin-top:.1rem}
+.dot{width:.62rem;height:.62rem;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.18);flex:none}
+.d-card{margin-top:1.05rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1rem 1.1rem}
+.d-metric{display:flex;justify-content:space-between;align-items:baseline}
+.d-metric span{color:#9aa7c8;font-size:.82rem}
+.d-metric b{font-family:var(--serif);font-size:1.65rem;font-weight:560}
+.d-bar{margin-top:.7rem;height:.5rem;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+.d-bar i{display:block;height:100%;width:72%;border-radius:99px;background:linear-gradient(90deg,#3b53ff,#9333ea);animation:fill 1.4s cubic-bezier(.2,.8,.2,1) both .4s}
+@keyframes fill{from{width:0}}
+.d-spark{margin-top:.9rem;display:flex;align-items:flex-end;gap:.34rem;height:3.2rem}
+.d-spark i{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#6b7cff,#3b53ff);opacity:.9;transform-origin:bottom;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes grow{from{transform:scaleY(.08)}}
+
+/* ---------- signal / data (mix: Version C "Overview at a Glance") ---------- */
+.signal{background:var(--paper-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.signal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.kpis{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.5rem 1.6rem}
+.kpi b{display:block;font-family:var(--serif);font-weight:560;font-size:clamp(1.7rem,3vw,2.3rem);line-height:1;background:linear-gradient(115deg,#3b53ff,#9333ea);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.5rem}
+.kpi span{color:var(--ink-soft);font-size:.92rem}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.6rem 1.7rem}
+.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1.1rem}
+.panel-head b{font-family:var(--serif);font-weight:560;font-size:1.12rem}
+.panel-head em{font-style:normal;color:var(--ink-soft);font-size:.84rem;display:block;font-family:var(--sans);margin-top:.15rem}
+.pill{background:#eef1fb;color:var(--coral-deep);font-weight:600;font-size:.76rem;padding:.32rem .7rem;border-radius:99px;white-space:nowrap;flex:none}
+.line-chart{width:100%;height:128px;display:block}
+.axis{display:flex;justify-content:space-between;margin-top:.5rem;color:var(--ink-soft);font-size:.74rem}
+.bars{display:flex;align-items:flex-end;gap:1.1rem;height:128px}
+.bars .col{flex:1;display:flex;flex-direction:column;align-items:center;gap:.45rem;height:100%}
+.bars .pair{display:flex;align-items:flex-end;gap:.34rem;width:100%;height:100%;justify-content:center}
+.bars .pair i{width:32%;border-radius:6px 6px 0 0;background:#dde2f3}
+.bars .pair i.on{background:linear-gradient(180deg,#6b7cff,#3b53ff)}
+.bars small{color:var(--ink-soft);font-size:.76rem}
+.legend{display:flex;gap:1.2rem;margin-top:1rem;font-size:.78rem;color:var(--ink-soft)}
+.legend span{display:inline-flex;align-items:center;gap:.4rem}
+.legend i{width:.7rem;height:.7rem;border-radius:3px;display:inline-block}
+@media(max-width:880px){
+  .hero-grid{grid-template-columns:1fr;gap:2.8rem}
+  .signal-grid{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr}
+}
+
+/* ---------- next-level motion ---------- */
+@keyframes aurora{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(3%,2%,0) scale(1.08)}100%{transform:translate3d(0,0,0) scale(1)}}
+header::before{animation:aurora 18s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero-visual .device{animation:floaty 7s ease-in-out infinite}
+.hero-visual::after{content:"";position:absolute;inset:10% 14%;z-index:-1;border-radius:44px;background:radial-gradient(60% 60% at 50% 42%,rgba(59,83,255,.22),transparent 70%);filter:blur(22px);animation:pulseGlow 7s ease-in-out infinite}
+@keyframes pulseGlow{0%,100%{opacity:.65}50%{opacity:1}}
+
+/* chart draws + bars grow on scroll */
+.line-chart .stroke{stroke-dasharray:1000;stroke-dashoffset:1000}
+.panel.in .line-chart .stroke{animation:draw 1.8s cubic-bezier(.3,.7,.2,1) forwards .2s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.line-chart .area{opacity:0;transition:opacity 1.1s ease .9s}
+.panel.in .line-chart .area{opacity:1}
+.bars .pair i{transform:scaleY(0);transform-origin:bottom;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.panel.in .bars .col:nth-child(1) .pair i{transition-delay:.05s}
+.panel.in .bars .col:nth-child(2) .pair i{transition-delay:.15s}
+.panel.in .bars .col:nth-child(3) .pair i{transition-delay:.25s}
+.panel.in .bars .col:nth-child(4) .pair i{transition-delay:.35s}
+.panel.in .bars .pair i{transform:scaleY(1)}
+
+/* staggered cards + micro-interactions */
+.cards .card:nth-child(2){transition-delay:.1s}
+.cards .card:nth-child(3){transition-delay:.2s}
+.card .glyph{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.card:hover .glyph{transform:translateY(-3px) rotate(-4deg) scale(1.06)}
+.kpi{transition:transform .3s,box-shadow .3s}
+.kpi:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(59,83,255,.3)}
+.aud-row{transition:background .3s}
+.aud-row:hover{background:color-mix(in srgb,var(--coral) 4%,transparent)}
+
+/* ---------- community band (mix: Version C) ---------- */
+.community{position:relative;overflow:hidden}
+.comm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:.4rem}
+.comm-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.5rem 1.6rem 1.6rem 1.9rem;transition:transform .3s,box-shadow .3s;overflow:hidden}
+.comm-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#3b53ff,#9333ea)}
+.comm-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(31,27,22,.22)}
+.comm-card .tag{display:inline-block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:.7rem}
+.comm-stat{font-family:var(--serif);font-weight:560;font-size:1.28rem;margin-bottom:.5rem;line-height:1.15}
+.comm-card p{color:var(--ink-soft);font-size:.95rem;margin-bottom:1.1rem}
+.cheer{display:inline-flex;align-items:center;gap:.45rem;background:#eef1fb;color:var(--coral-deep);font-weight:600;font-size:.8rem;padding:.32rem .78rem;border-radius:99px}
+.cheer .heart{display:inline-block;animation:beat 1.6s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}30%{transform:scale(1.28)}}
+@media(max-width:880px){.comm-grid{grid-template-columns:1fr}}
+/* ---------- real mockups (Marina's app screens) ---------- */
+.hero-shot{display:block;width:min(300px,84%);height:auto;margin:0 auto;animation:floaty 7s ease-in-out infinite;filter:drop-shadow(0 40px 60px rgba(59,83,255,.40)) drop-shadow(0 12px 26px rgba(12,14,19,.28))}
+.panel.shot{padding-bottom:1.2rem}
+.panel.shot img{width:100%;height:auto;display:block;border-radius:12px;margin-top:.5rem;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.panel.shot:hover img{transform:scale(1.02)}
+.comm-show{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:4rem;align-items:center}
+.comm-phone{display:flex;justify-content:center}
+.comm-phone img{width:min(300px,80%);height:auto;animation:floaty 8s ease-in-out infinite;filter:drop-shadow(0 36px 56px rgba(147,51,234,.30)) drop-shadow(0 12px 24px rgba(12,14,19,.25))}
+.comm-show p{margin-top:1rem;color:var(--ink-soft);font-size:1.08rem;max-width:48ch}
+.comm-list{list-style:none;display:flex;flex-direction:column;gap:1.05rem;margin-top:1.8rem}
+.comm-list li{position:relative;padding-left:1.6rem;color:var(--ink-soft);font-size:1.02rem}
+.comm-list li::before{content:"";position:absolute;left:0;top:.5rem;width:.62rem;height:.62rem;border-radius:50%;background:linear-gradient(135deg,#3b53ff,#9333ea)}
+.comm-list b{color:var(--ink);font-family:var(--serif);font-weight:560}
+@media(max-width:880px){.comm-show{grid-template-columns:1fr;gap:2.4rem}}
+
+/* ---------- stakeholder value blocks (Marina: value per stakeholder) ---------- */
+.stakeholders .sec-head{margin-bottom:.6rem}
+.stake{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:4rem;align-items:center;padding:3.2rem 0;border-top:1px solid var(--line)}
+.stake:first-of-type{border-top:none}
+.stake.rev .stake-shot{order:2}
+.stake-shot{display:flex;justify-content:center}
+.stake-shot img{width:100%;max-width:300px;height:auto;filter:drop-shadow(0 30px 50px rgba(59,83,255,.26)) drop-shadow(0 10px 22px rgba(12,14,19,.20));transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.stake:hover .stake-shot img{transform:translateY(-8px)}
+.stake-tag{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);font-weight:600;margin-bottom:.8rem}
+.stake-copy h3{font-family:var(--serif);font-weight:540;font-size:clamp(1.4rem,2.5vw,2rem);line-height:1.14;letter-spacing:-.015em;margin-bottom:.8rem}
+.stake-copy h3 em{font-style:italic;color:var(--coral)}
+.stake-copy p{color:var(--ink-soft);font-size:1.05rem;max-width:50ch;margin-bottom:1.3rem}
+.stake-shot.photo img{max-width:370px;border-radius:22px;box-shadow:0 34px 64px -30px rgba(12,14,19,.40);filter:none}
+@media(max-width:880px){.stake{grid-template-columns:1fr;gap:1.8rem;padding:2.4rem 0}.stake.rev .stake-shot{order:0}}
+
+/* ---------- slim problem strip (Marina: less problem focus) ---------- */
+.stat-strip{padding:2.3rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-deep)}
+.stat-strip p{text-align:center;max-width:64ch;margin:0 auto;font-size:clamp(1.05rem,1.9vw,1.32rem);color:var(--ink-soft);line-height:1.5}
+.stat-strip b{color:var(--ink);font-family:var(--serif);font-weight:560}
+.stat-strip span{color:var(--coral);font-weight:600}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
@@ -197,8 +332,8 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:
     <a class="logo" href="#"><img src="connectra-logo.png" alt="Connectra" style="height:34px;display:block"></a>
     <div class="nav-links">
       <a href="#how">How it works</a>
+      <a href="#patients">Patients</a>
       <a href="#clinics">Clinics</a>
-      <a href="#orgs">Organizations</a>
       <a href="#mfrs">Manufacturers</a>
       <a class="btn coral" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">Book a call with Marina</a>
     </div>
@@ -206,30 +341,25 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:
 </nav>
 
 <header>
-  <div class="wrap">
-    <div class="kicker reveal d1">For the clinics, organizations &amp; manufacturers who serve device users</div>
-    <h1 class="reveal d2">60 to 80% of the people you fit, build for, or serve end up dissatisfied with their device, or abandon it. <em>You never see it happen.</em></h1>
-    <p class="hero-sub reveal d3">Connectra is the layer that keeps device users engaged, connected to their care team, and visible again, to the clinics, organizations, and manufacturers who serve them.</p>
-    <div class="hero-ctas reveal d4">
-      <a class="btn coral" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">Book a call with Marina →</a>
-      <a class="btn ghost" href="#how">See how it works</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="kicker reveal d1">For the clinics, organizations &amp; manufacturers who serve device users</div>
+      <h1 class="reveal d2">Keep every device <em>in the loop</em>, and every user visible, long after the clinic door closes.</h1>
+      <p class="hero-sub reveal d3">Connectra turns the data a device already produces into ground truth. Progress your users can see, and a live signal the clinics, organizations, and manufacturers who serve them can finally act on.</p>
+      <div class="hero-ctas reveal d4">
+        <a class="btn coral" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">Book a call with Marina →</a>
+        <a class="btn ghost" href="#how">See how it works</a>
+      </div>
+      <p class="hero-note reveal d4">Already piloting with industry leaders in rehabilitation and O&amp;P care.</p>
     </div>
-    <p class="hero-note reveal d4">Already piloting with industry leaders in rehabilitation and O&amp;P care.</p>
+    <div class="hero-visual reveal d3">
+      <img class="hero-shot" src="mockups/m-dash.png" alt="Connectra app, the progress dashboard" width="415" height="820">
+    </div>
   </div>
 </header>
 
-<section class="stat-band">
-  <div class="wrap stat-grid">
-    <div class="sr">
-      <div class="huge">60 to 80%
-        <small>of assistive devices end up abandoned</small>
-      </div>
-    </div>
-    <div class="stat-copy sr">
-      <p><strong>Nobody knows what happens after the clinic door closes.</strong></p>
-      <p>A device generates data all day. Steps, grips, pressure, range. Almost none of it reaches the people who could act on it.</p>
-    </div>
-  </div>
+<section class="stat-strip">
+  <div class="wrap sr"><p><b>60 to 80%</b> of assistive devices end up abandoned, most of it after the clinic door closes. <span>Connectra is how that stops.</span></p></div>
 </section>
 
 <section class="section" id="how">
@@ -239,38 +369,78 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:
       <p>Connectra puts the device in the loop. The data a device already produces becomes ground truth: for the user, to track progress, and for the care team, to finally see what happens after the clinic door.</p>
     </div>
     <div class="cards">
-      <div class="card sr"><div class="glyph">📈</div><h3>Track progress</h3><p>Goals, milestones, and real-world device use, week by week.</p></div>
-      <div class="card sr"><div class="glyph">🤝</div><h3>Stay connected</h3><p>Your care team sees how it's actually going between visits, and can step in before small problems become abandonment.</p></div>
-      <div class="card sr"><div class="glyph">👥</div><h3>Find your people</h3><p>A community of users who've been where you are, thriving with their devices.</p></div>
+      <div class="card sr"><div class="glyph">📈</div><h3>Track</h3><p>Goals, milestones, and real-world device use, week by week. Progress you can see.</p></div>
+      <div class="card sr"><div class="glyph">✨</div><h3>Improve</h3><p>Connectra Intelligence turns raw device data into clear, plain-language guidance, so every week of use becomes a step forward.</p></div>
+      <div class="card sr"><div class="glyph">👥</div><h3>Connect</h3><p>Your care team sees how it's actually going between visits and steps in early. Your community shows you what thriving looks like.</p></div>
     </div>
   </div>
 </section>
 
-<section class="aud">
+<section class="section signal">
   <div class="wrap">
-    <div class="aud-row sr" id="clinics">
-      <div class="aud-id"><span class="aud-num">01</span><span class="aud-name">For clinics</span></div>
-      <div class="aud-body">
-        <p class="lead">See what happens after the clinic door closes.</p>
-        <p>A live view of real-world device use across every brand. Spot a struggling patient early, intervene before they give up. The same remote monitoring is reimbursable, so follow-up that used to be unpaid becomes a margin line while your outcomes improve.</p>
-      </div>
-      <div class="aud-cta"><a class="btn ghost" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">Worth 15 minutes? →</a></div>
+    <div class="sec-head sr">
+      <h2>The whole <em>picture</em>, finally.</h2>
+      <p>1.2 million moments per device, every day, turned into progress users can see and a signal care teams can finally act on. This is the ground truth nobody has had.</p>
     </div>
-    <div class="aud-row sr" id="orgs">
-      <div class="aud-id"><span class="aud-num">02</span><span class="aud-name">For disability organizations</span></div>
-      <div class="aud-body">
-        <p class="lead">A member perk that costs your organization nothing.</p>
-        <p>Free lifetime access for your community: a coupon code your team distributes, no integration lift on your side, first access pre-launch, and the engagement comes back to your channels.</p>
+    <div class="signal-grid">
+      <div class="kpis sr">
+        <div class="kpi"><b>1.2M</b><span>data points per device, every day</span></div>
+        <div class="kpi"><b>Every brand</b><span>one view across all device types</span></div>
+        <div class="kpi"><b>Reimbursable</b><span>remote monitoring, built in</span></div>
       </div>
-      <div class="aud-cta"><a class="btn ghost" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">Explore a partnership →</a></div>
+      <div class="panel shot sr">
+        <div class="panel-head"><div><b>EMG signal, live</b><em>Real-world device use, by the millisecond</em></div><span class="pill">In-app</span></div>
+        <img src="mockups/m-data1.png" alt="Connectra EMG data dashboard" loading="lazy">
+      </div>
+      <div class="panel shot sr">
+        <div class="panel-head"><div><b>Motor statistics</b><em>The clinician view, across every brand</em></div></div>
+        <img src="mockups/m-data2.png" alt="Connectra motor statistics dashboard" loading="lazy">
+      </div>
     </div>
-    <div class="aud-row sr" id="mfrs">
-      <div class="aud-id"><span class="aud-num">03</span><span class="aud-name">For manufacturers</span></div>
-      <div class="aud-body">
-        <p class="lead">Make the invisible visible.</p>
-        <p>Your device ships, but the data shouldn't stop. 1.2 million moments a day, turned into insight your product, clinical, and commercial teams can act on, including the abandonment signals you can't see today. We work across every brand.</p>
-      </div>
-      <div class="aud-cta"><a class="btn ghost" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">See the data →</a></div>
+  </div>
+</section>
+
+<section class="section stakeholders" id="value">
+  <div class="wrap">
+    <div class="sec-head sr">
+      <h2>Value for <em>everyone</em> in the loop.</h2>
+      <p>One platform. Four people it serves, each seeing the part that matters to them.</p>
+    </div>
+  </div>
+  <div class="wrap stake" id="patients">
+    <div class="stake-shot photo sr"><img src="mockups/athlete.png" alt="An adaptive athlete sprinting on a running blade" loading="lazy"></div>
+    <div class="stake-copy sr">
+      <span class="stake-tag">For patients</span>
+      <h3>Progress you can see. <em>Never on your own.</em></h3>
+      <p>Track real-world device use week by week, hit milestones, and find people who have been where you are. Adapt, don't abandon. You're not defined by your device, you're defined by your drive.</p>
+      <a class="btn ghost" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">See the app →</a>
+    </div>
+  </div>
+  <div class="wrap stake rev" id="clinics">
+    <div class="stake-shot sr"><img src="mockups/m-connect.png" alt="Connectra connects every device" loading="lazy"></div>
+    <div class="stake-copy sr">
+      <span class="stake-tag">For clinics</span>
+      <h3>See what happens <em>after the clinic door</em>.</h3>
+      <p>A live view of real-world device use across every brand. Spot a struggling patient early and intervene before they give up. The same remote monitoring is reimbursable, so follow-up that used to be unpaid supports your margins while outcomes improve.</p>
+      <a class="btn ghost" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">Worth 15 minutes? →</a>
+    </div>
+  </div>
+  <div class="wrap stake" id="orgs">
+    <div class="stake-shot sr"><img src="mockups/m-community.png" alt="Connectra community" loading="lazy"></div>
+    <div class="stake-copy sr">
+      <span class="stake-tag">For disability organizations</span>
+      <h3>Real support for the <em>members you serve</em>.</h3>
+      <p>Connectra gives your community a place to track progress, stay connected to their care team, and see others thriving with their devices. We partner with organizations to bring it to members, with the engagement staying close to your channels.</p>
+      <a class="btn ghost" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">Explore a partnership →</a>
+    </div>
+  </div>
+  <div class="wrap stake rev" id="mfrs">
+    <div class="stake-shot sr"><img src="mockups/m-device.png" alt="Connectra device profile and data" loading="lazy"></div>
+    <div class="stake-copy sr">
+      <span class="stake-tag">For manufacturers</span>
+      <h3>Make the <em>invisible visible</em>.</h3>
+      <p>Your device ships, but the data shouldn't stop. 1.2 million moments a day, turned into insight your product, clinical, and commercial teams can act on, including the abandonment signals you can't see today. We work across every brand.</p>
+      <a class="btn ghost" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">See the data →</a>
     </div>
   </div>
 </section>
@@ -281,7 +451,8 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:
     <div class="sr">
       <h2>Built by a physician<br>who <em>builds prosthetics</em>.</h2>
       <p>The hardware problem is mostly solved. The system around it is not.</p>
-      <p>Marina Davtyan, MD started Connectra after years of watching the same story repeat: a great fitting, a hopeful patient, and then silence, until the device turned up abandoned.</p>
+      <p>Marina Davtyan, MD started her first prosthetics company at 19. She built Connectra after years of watching the same story repeat: a great fitting, a hopeful patient, and then silence, until the device turned up abandoned.</p>
+      <p>This layer is coming to every assistive device. The only question is who builds it.</p>
       <p>We're already piloting with industry leaders in rehabilitation and O&amp;P care.</p>
       <div class="sig">Marina Davtyan, MD<small>founder, Connectra · Berkeley SkyDeck</small></div>
     </div>
