@@ -4,23 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Connectra — the layer that keeps device users visible</title>
+<title>Connectra, the layer that keeps device users visible</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#faf6ef;
-  --paper-deep:#f3ecdf;
-  --ink:#1f1b16;
-  --ink-soft:#5c544a;
-  /* ACCENT = PLACEHOLDER. Final accent color is Georgi's to define per
-     clients/marina-connectra/page-visuals.md (warm neutrals + one calm
-     green/teal accent · never neon, cold blue, or AI-gradient). */
-  --coral:#6e655a;
-  --coral-deep:#52493f;
-  --teal:#5c544a;
-  --line:rgba(31,27,22,.14);
+  --paper:#ffffff;
+  --paper-deep:#f5f6f9;
+  --ink:#0c0e13;
+  --ink-soft:#5b6573;
+  /* Cool luxury palette (Agathe direction, Jun 17): white / cool-grey / near-black + blue.
+     Departs from page-visuals.md warm-neutral spec — prototype for Georgi/Marina to bless. */
+  --coral:#3b53ff;
+  --coral-deep:#2031c7;
+  --teal:#6b7686;
+  --line:rgba(12,14,19,.12);
   --serif:"Fraunces",serif;
   --sans:"Instrument Sans",sans-serif;
 }
@@ -59,9 +58,9 @@ nav{
   padding:.7rem 1.4rem;border-radius:99px;text-decoration:none;font-weight:600;font-size:.95rem;
   transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s,box-shadow .25s;
 }
-.btn:hover{background:var(--coral-deep);transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(201,63,39,.55)}
-.btn.coral{background:var(--coral)}
-.btn.coral:hover{background:var(--coral-deep)}
+.btn:hover{background:var(--coral-deep);transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(59,83,255,.45)}
+.btn.coral{background:linear-gradient(120deg,#3b53ff,#9333ea);color:#fff;font-weight:700;box-shadow:0 8px 22px -12px rgba(59,83,255,.6)}
+.btn.coral:hover{background:linear-gradient(120deg,#2a40e0,#7e22ce)}
 .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper);box-shadow:none}
 
@@ -70,8 +69,8 @@ header{position:relative;padding:7.5rem 0 5.5rem;overflow:hidden}
 header::before{
   content:"";position:absolute;inset:-20% -10% auto;height:140%;z-index:-1;
   background:
-    radial-gradient(46rem 30rem at 85% 8%,rgba(232,84,58,.10),transparent 60%),
-    radial-gradient(40rem 26rem at 8% 90%,rgba(29,106,94,.10),transparent 60%);
+    radial-gradient(46rem 30rem at 85% 8%,rgba(59,83,255,.10),transparent 60%),
+    radial-gradient(40rem 26rem at 8% 90%,rgba(147,51,234,.08),transparent 60%);
 }
 .kicker{
   display:inline-flex;align-items:center;gap:.55rem;
@@ -99,17 +98,17 @@ h1 em{font-style:italic;color:var(--coral)}
 }
 .stat-band::before{
   content:"";position:absolute;inset:0;opacity:.5;
-  background:radial-gradient(50rem 30rem at 80% 110%,rgba(232,84,58,.28),transparent 65%);
+  background:radial-gradient(50rem 30rem at 80% 110%,rgba(59,83,255,.30),transparent 65%);
 }
 .stat-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:4rem;align-items:center;position:relative}
 .huge{
   font-family:var(--serif);font-weight:560;line-height:.9;letter-spacing:-.03em;
   font-size:clamp(5.4rem,14vw,12rem);
-  background:linear-gradient(115deg,#faf6ef 30%,#b9ad9c 85%);
+  background:linear-gradient(115deg,#ffffff 30%,#8e9bb8 85%);
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.huge small{display:block;font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:clamp(.72rem,1vw,.85rem);color:#b9b1a4;margin-top:1.4rem;-webkit-text-fill-color:#b9b1a4}
-.stat-copy p{color:#cfc8bb;font-size:1.08rem;max-width:46ch}
+.huge small{display:block;font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:clamp(.72rem,1vw,.85rem);color:#9aa3b4;margin-top:1.4rem;-webkit-text-fill-color:#9aa3b4}
+.stat-copy p{color:#c4cad6;font-size:1.08rem;max-width:46ch}
 .stat-copy p+p{margin-top:1.1rem}
 .stat-copy strong{color:var(--paper)}
 
@@ -129,8 +128,8 @@ h2 em{font-style:italic;color:var(--coral)}
   width:2.9rem;height:2.9rem;border-radius:12px;display:grid;place-items:center;
   font-size:1.3rem;margin-bottom:1.3rem;background:var(--paper-deep);
 }
-.card:nth-child(2) .glyph{background:#e9f1ee}
-.card:nth-child(3) .glyph{background:#fdeae5}
+.card:nth-child(2) .glyph{background:#eef1fb}
+.card:nth-child(3) .glyph{background:#efeaff}
 .card h3{font-family:var(--serif);font-weight:560;font-size:1.3rem;margin-bottom:.5rem}
 .card p{font-size:.98rem;color:var(--ink-soft)}
 
@@ -152,14 +151,14 @@ h2 em{font-style:italic;color:var(--coral)}
 .founder{background:var(--paper-deep);position:relative;overflow:hidden}
 .founder::before{
   content:"“";position:absolute;top:-6rem;right:2vw;font-family:var(--serif);
-  font-size:34rem;line-height:1;color:rgba(232,84,58,.10);pointer-events:none;
+  font-size:34rem;line-height:1;color:rgba(59,83,255,.08);pointer-events:none;
 }
 .founder-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:4.5rem;align-items:center;position:relative}
 .portrait{
   aspect-ratio:4/5;border-radius:20px;background:
-    linear-gradient(160deg,#21655a, #143f38 70%);
+    linear-gradient(160deg,#283449, #0c0e13 70%);
   display:flex;align-items:flex-end;justify-content:center;
-  color:#cfe5df;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;
+  color:#c2ccdc;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;
   padding-bottom:1.4rem;border:1px solid var(--line);
 }
 .founder h2{margin-bottom:1.4rem}
@@ -172,7 +171,7 @@ h2 em{font-style:italic;color:var(--coral)}
 .final{padding:7.5rem 0;text-align:center;position:relative;overflow:hidden}
 .final::before{
   content:"";position:absolute;inset:0;z-index:-1;
-  background:radial-gradient(36rem 22rem at 50% 120%,rgba(232,84,58,.14),transparent 65%);
+  background:radial-gradient(36rem 22rem at 50% 120%,rgba(59,83,255,.12),transparent 65%);
 }
 .final h2{max-width:24ch;margin:0 auto 2.2rem}
 footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:var(--ink-soft)}
@@ -193,13 +192,9 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:
 </head>
 <body>
 
-<div style="background:#1f1b16;color:#cfc8bb;text-align:center;font-size:.78rem;letter-spacing:.08em;padding:.45rem 1rem;position:relative;z-index:60">
-  PROTOTYPE · structure + candidate copy only · accent color, type &amp; photography = Georgi per brand guide · words = Agathe per voice rules · target: partners.connectra.care
-</div>
-
 <nav>
   <div class="nav-in">
-    <a class="logo" href="#">connectra<i>.</i></a>
+    <a class="logo" href="#"><img src="connectra-logo.png" alt="Connectra" style="height:34px;display:block"></a>
     <div class="nav-links">
       <a href="#how">How it works</a>
       <a href="#clinics">Clinics</a>
@@ -213,8 +208,8 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:
 <header>
   <div class="wrap">
     <div class="kicker reveal d1">For the clinics, organizations &amp; manufacturers who serve device users</div>
-    <h1 class="reveal d2">60–80% of the people you fit, build for, or serve end up dissatisfied with their device — or abandon it. <em>You never see it happen.</em></h1>
-    <p class="hero-sub reveal d3">Connectra is the layer that keeps device users engaged, connected to their care team, and visible again — to the clinics, organizations, and manufacturers who serve them.</p>
+    <h1 class="reveal d2">60 to 80% of the people you fit, build for, or serve end up dissatisfied with their device, or abandon it. <em>You never see it happen.</em></h1>
+    <p class="hero-sub reveal d3">Connectra is the layer that keeps device users engaged, connected to their care team, and visible again, to the clinics, organizations, and manufacturers who serve them.</p>
     <div class="hero-ctas reveal d4">
       <a class="btn coral" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">Book a call with Marina →</a>
       <a class="btn ghost" href="#how">See how it works</a>
@@ -226,13 +221,13 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:
 <section class="stat-band">
   <div class="wrap stat-grid">
     <div class="sr">
-      <div class="huge">60–80%
-        <small>of prosthesis &amp; wheelchair users end up dissatisfied — or abandon the device</small>
+      <div class="huge">60 to 80%
+        <small>of assistive devices end up abandoned</small>
       </div>
     </div>
     <div class="stat-copy sr">
-      <p><strong>After the fitting room, clinical follow-up mostly stops at the discharge note.</strong></p>
-      <p>The months that decide satisfaction go unseen by clinics, communities, and device makers.</p>
+      <p><strong>Nobody knows what happens after the clinic door closes.</strong></p>
+      <p>A device generates data all day. Steps, grips, pressure, range. Almost none of it reaches the people who could act on it.</p>
     </div>
   </div>
 </section>
@@ -240,13 +235,13 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:
 <section class="section" id="how">
   <div class="wrap">
     <div class="sec-head sr">
-      <h2>Strava for the <em>assistive device</em> world.</h2>
-      <p>Connectra is an app where device users track progress, stay connected to their care team, and see others in the community thriving. Every week of real-world use builds the picture that's been missing since the device left the clinic.</p>
+      <h2>Strava for <em>prosthetic and wheelchair users</em>.</h2>
+      <p>Connectra puts the device in the loop. The data a device already produces becomes ground truth: for the user, to track progress, and for the care team, to finally see what happens after the clinic door.</p>
     </div>
     <div class="cards">
-      <div class="card sr"><div class="glyph">📈</div><h3>Track progress</h3><p>Goals, milestones, and real-world device use — week by week.</p></div>
+      <div class="card sr"><div class="glyph">📈</div><h3>Track progress</h3><p>Goals, milestones, and real-world device use, week by week.</p></div>
       <div class="card sr"><div class="glyph">🤝</div><h3>Stay connected</h3><p>Your care team sees how it's actually going between visits, and can step in before small problems become abandonment.</p></div>
-      <div class="card sr"><div class="glyph">👥</div><h3>Find your people</h3><p>A community of users who've been where you are — thriving with their devices.</p></div>
+      <div class="card sr"><div class="glyph">👥</div><h3>Find your people</h3><p>A community of users who've been where you are, thriving with their devices.</p></div>
     </div>
   </div>
 </section>
@@ -256,8 +251,8 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:
     <div class="aud-row sr" id="clinics">
       <div class="aud-id"><span class="aud-num">01</span><span class="aud-name">For clinics</span></div>
       <div class="aud-body">
-        <p class="lead">See what happens to your patients after the fitting room.</p>
-        <p>A live view of real-world device use across every brand — spot a struggling patient early, intervene before they give up. The same remote monitoring is reimbursable, so follow-up that used to be unpaid becomes a margin line while your outcomes improve.</p>
+        <p class="lead">See what happens after the clinic door closes.</p>
+        <p>A live view of real-world device use across every brand. Spot a struggling patient early, intervene before they give up. The same remote monitoring is reimbursable, so follow-up that used to be unpaid becomes a margin line while your outcomes improve.</p>
       </div>
       <div class="aud-cta"><a class="btn ghost" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">Worth 15 minutes? →</a></div>
     </div>
@@ -265,15 +260,15 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:
       <div class="aud-id"><span class="aud-num">02</span><span class="aud-name">For disability organizations</span></div>
       <div class="aud-body">
         <p class="lead">A member perk that costs your organization nothing.</p>
-        <p>Free lifetime access for your community: a coupon code your team distributes, no integration lift on your side, first access pre-launch — and the engagement comes back to your channels.</p>
+        <p>Free lifetime access for your community: a coupon code your team distributes, no integration lift on your side, first access pre-launch, and the engagement comes back to your channels.</p>
       </div>
       <div class="aud-cta"><a class="btn ghost" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">Explore a partnership →</a></div>
     </div>
     <div class="aud-row sr" id="mfrs">
       <div class="aud-id"><span class="aud-num">03</span><span class="aud-name">For manufacturers</span></div>
       <div class="aud-body">
-        <p class="lead">Your device ships. The data shouldn't stop.</p>
-        <p>Real-world device use — 1.2M data points per device per day — turned into insight your product, clinical, and commercial teams can act on, including the satisfaction and abandonment signals you can't see today. We work across brands.</p>
+        <p class="lead">Make the invisible visible.</p>
+        <p>Your device ships, but the data shouldn't stop. 1.2 million moments a day, turned into insight your product, clinical, and commercial teams can act on, including the abandonment signals you can't see today. We work across every brand.</p>
       </div>
       <div class="aud-cta"><a class="btn ghost" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">See the data →</a></div>
     </div>
@@ -282,10 +277,11 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:
 
 <section class="section founder">
   <div class="wrap founder-grid">
-    <div class="portrait sr">[ Marina — photo ]</div>
+    <div class="portrait sr">[ Marina · photo ]</div>
     <div class="sr">
       <h2>Built by a physician<br>who <em>builds prosthetics</em>.</h2>
-      <p>Marina Davtyan, MD started Connectra after years of watching the same story repeat: a great fitting, a hopeful patient, and then silence — until the device turned up abandoned.</p>
+      <p>The hardware problem is mostly solved. The system around it is not.</p>
+      <p>Marina Davtyan, MD started Connectra after years of watching the same story repeat: a great fitting, a hopeful patient, and then silence, until the device turned up abandoned.</p>
       <p>We're already piloting with industry leaders in rehabilitation and O&amp;P care.</p>
       <div class="sig">Marina Davtyan, MD<small>founder, Connectra · Berkeley SkyDeck</small></div>
     </div>
@@ -294,8 +290,9 @@ footer{border-top:1px solid var(--line);padding:2.4rem 0;font-size:.85rem;color:
 
 <section class="final">
   <div class="wrap">
-    <h2 class="sr">Whether you fit devices, build them, or fight for the people who use them — <em>worth a 15-minute conversation.</em></h2>
+    <h2 class="sr">Whether you fit devices, build them, or fight for the people who use them. <em>Worth a 15-minute conversation.</em></h2>
     <a class="btn coral sr" href="https://calendar.app.google/C3uHTE6Z9xAJpUzM9">Book a call with Marina →</a>
+    <p class="sr" style="margin-top:2.4rem;font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--ink-soft)">Connecting all the dots, together.</p>
   </div>
 </section>
 
